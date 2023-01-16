@@ -39,3 +39,21 @@ let n2=new Producto("Remera",6000);
 
 console.log(n1.toString());
 console.log(n2.toString());
+
+
+class Orden{
+    
+    static contOrden=0;
+    
+    static get MAX_ORDEN(){
+        return 5;
+    }
+    constructor(){
+    
+    this._IdOrden=++Orden.contOrden;
+    this._CantiProductos=[];
+    this._ContadorProductosAgregados=0;
+    
+    
+    }
+}
