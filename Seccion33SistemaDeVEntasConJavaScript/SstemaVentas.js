@@ -29,16 +29,12 @@ class Producto {
     }
 
     toString() {
-        return `this.idProducto: ${this._idProducto}, nombre: ${this._nombre}, precio: $${this._precio} `;
+        return `Producto: ${this._idProducto}, nombre: ${this._nombre}, precio: $${this._precio} `;
     }
 
 }
 
-let n1 = new Producto("pantalon", 14000);
-let n2 = new Producto("Remera", 6000);
 
-console.log(n1.toString());
-console.log(n2.toString());
 
 
 class Orden {
@@ -52,7 +48,7 @@ class Orden {
 
         this._IdOrden = ++Orden.contOrden;
         this._CantiProductos = [];
-        this._ContadorProductosAgregados = 0;
+       // this._ContadorProductosAgregados = 0;
 
 
     }
@@ -65,16 +61,16 @@ class Orden {
 
         if (this._CantiProductos.length < Orden.MAX_ORDEN) {
 
-           // this._CantiProductos.push(Producto);
+            this._CantiProductos.push(Producto);
             
             //this._CantiProductos[this._ContadorProductosAgregados++]=Producto;    //OPCIONAL
             
 
-                for (var i=0;i<this._CantiProductos.length;i++){
+                // for (var i=0;i<this._CantiProductos.length;i++){
                 
-                this._CantiProductos=Producto[i];
+                // this._CantiProductos=Producto[i];
                 
-                }
+                // }
 
         } else {
             console.log("no se pueden agregar mas producto");
@@ -86,21 +82,32 @@ class Orden {
     CalcularVenta(){
     let Totalventas=0;
     for(let producto of this._CantiProductos){
-    Totalventas+= Producto.precio;
+    Totalventas+= producto.precio;
     }
     return Totalventas;
     }
     
-    MOstrarOrden(){
+    MostrarOrden(){
     let ProductosOrden='';
     for(let producto of this._CantiProductos){
     ProductosOrden+=producto.toString()+ ' ';
     }
-    console.log(`Orden: ${this.idOrden} Total: ${this.calcularTotal()}, Productos: ${ProductosOrden}`);
+    console.log(`Orden: ${this.IdOrden} Total: ${this.CalcularVenta()}, Productos: ${ProductosOrden}`);
     
     }
     
     
 
-
 }
+
+let n1 = new Producto("pantalon", 14000);
+let n2 = new Producto("Remera", 6000);
+console.log(n1);
+
+
+
+let orden1 = new Orden();
+orden1.agregarProducto(n1);
+orden1.agregarProducto(n2);
+
+orden1.MostrarOrden();
