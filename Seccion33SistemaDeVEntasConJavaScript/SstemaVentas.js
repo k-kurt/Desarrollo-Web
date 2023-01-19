@@ -90,9 +90,9 @@ class Orden {
     MostrarOrden(){
     let ProductosOrden='';
     for(let producto of this._CantiProductos){
-    ProductosOrden+=producto.toString()+ ' ';
+    ProductosOrden+=`\n{`+ producto.toString()+ '}';
     }
-    console.log(`Orden: ${this.IdOrden} Total: ${this.CalcularVenta()}, Productos: ${ProductosOrden}`);
+    console.log(`Orden: ${this.IdOrden} Total: $${this.CalcularVenta()}, Productos: ${ProductosOrden}`);
     
     }
     
@@ -111,3 +111,13 @@ orden1.agregarProducto(n1);
 orden1.agregarProducto(n2);
 
 orden1.MostrarOrden();
+
+let orden2=new Orden();
+let n3=new Producto("cinturon", 2500);
+let n4=new Producto("campera",16000);
+orden2.agregarProducto(n3);
+orden2.agregarProducto(n4);
+orden2.agregarProducto(n2);
+orden2.agregarProducto(n1);
+orden2.agregarProducto(n1);
+orden2.MostrarOrden();
