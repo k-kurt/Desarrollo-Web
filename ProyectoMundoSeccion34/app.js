@@ -33,7 +33,7 @@ class raton{
     
     constructor(){
     
-    this._CantidadRaton+=idRaton;
+    this._CantidadRaton+=raton.idRaton;
     
     }
     
@@ -50,7 +50,7 @@ class raton{
         static idTeclado=0;
     
     constructor(){
-        catidadTeclado+=idTeclado;
+        catidadTeclado+=teclado.idTeclado;
         
     }
     
@@ -60,4 +60,33 @@ class raton{
     
     }
     
+    class monitor{
+    static idMonitor=0;
+    
+    constructor(marca, tamanio){
+    
+        cantidadMonitor+=monitor.idMonitor;
+        this._marca=marca;
+        this._tamanio=tamanio;
+    }
+    
+    
+    get marca(){
+    return this._marca;
+    }
+    set marca(marca){
+    this._marca=marca;
+    }
+    
+    get tamanio(){
+    return this._marca;
+    }
+    set tamanio(tamanio){
+    this._tamanio=tamanio;
+    }
+    
+    toString(){
+    return `marca: ${this._marca}, tamanio de pantalla: ${this._tamanio}`;
+    }
+    }
 
