@@ -27,4 +27,21 @@ toString() {
 }
 }
 
-class 
+class raton{
+    
+    static idRaton=0;
+    
+    constructor(){
+    
+    this._CantidadRaton+=idRaton;
+    
+    }
+    
+    toString(){
+    return `marca: ${DispositivoEntrada._marca}, tipo de entrada: ${DispositivoEntrada._tipoEntrada}`;
+    }
+  
+    }
+    
+    
+
