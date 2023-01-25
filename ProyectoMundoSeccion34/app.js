@@ -21,5 +21,10 @@ set marca(marca){
     this._marca=marca;
 }
 
-
+toString() {
+    return `tipo de entrada:  ${this._tipoEntrada}, marca: ${this._marca} `; 
+    
 }
+}
+
+class 
