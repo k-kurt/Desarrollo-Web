@@ -44,4 +44,20 @@ class raton{
     }
     
     
+    
+    class teclado{
+    
+        static idTeclado=0;
+    
+    constructor(){
+        catidadTeclado+=idTeclado;
+        
+    }
+    
+    toString(){
+        return `Marca: ${DispositivoEntrada._marca} tipo de entrada: ${DispositivoEntrada._tipoEntrada}`;
+    }
+    
+    }
+    
 
