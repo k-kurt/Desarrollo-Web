@@ -40,29 +40,45 @@ class raton extends DispositivoEntrada {
     return this._idRaton;}
 
     toString() {
-        return `Producto: ${this._idRaton}, marca: ${this._tipoEntrada}, tipo de entrada: ${this._marca}`;
+        return `Producto: ${this._idRaton}, entrada: ${this._tipoEntrada}, marca: ${this._marca}`;
     }
 
 }
+
 
 let n1=new raton("usb","samsung");
 console.log(n1.toString());
+let n2=new raton("ficha", "dell");
+console.log(n2.toString());
 
-class teclado {
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class teclado extends DispositivoEntrada{
 
-    static idTeclado = 0;
+    static cantTeclado = 0;
 
-    constructor() {
-        catidadTeclado += teclado.idTeclado;
+    constructor(tipoEntrada, marca) {
+    super(tipoEntrada,marca);
+        this._idTeclado =++teclado.cantTeclado;
 
     }
 
+        get idRaton(){
+        return this._idTeclado;}
+
+
     toString() {
-        return `Marca: ${DispositivoEntrada._marca} tipo de entrada: ${DispositivoEntrada._tipoEntrada}`;
+        return `teclado: ${this._idTeclado} Marca: ${this._marca} tipo de entrada: ${this._tipoEntrada}`;
     }
 
 }
 
+let t1=new teclado("usb", "dell");
+let t2=new teclado("ficha", "logitech");
+console.log(t1.toString());
+console.log(t2.toString());
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////* */
 
 
 
