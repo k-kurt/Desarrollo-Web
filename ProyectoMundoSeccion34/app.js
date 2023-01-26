@@ -27,23 +27,26 @@ class DispositivoEntrada {
     }
 }
 
-class raton {
+class raton extends DispositivoEntrada {
 
-    static idRaton = 0;
+    static cantRaton = 0;
 
-    constructor() {
-
-        this._CantidadRaton += raton.idRaton;
-
+    constructor(tipoEntrada,marca) {
+        super(tipoEntrada,marca);
+        this._idRaton=++raton.cantRaton;
     }
+    
+    get idRaton(){
+    return this._idRaton;}
 
     toString() {
-        return `marca: ${DispositivoEntrada._marca}, tipo de entrada: ${DispositivoEntrada._tipoEntrada}`;
+        return `Producto: ${this._idRaton}, marca: ${this._tipoEntrada}, tipo de entrada: ${this._marca}`;
     }
 
 }
 
-
+let n1=new raton("usb","samsung");
+console.log(n1.toString());
 
 class teclado {
 
@@ -139,4 +142,15 @@ class computadora {
     toString() {
         return `Nombre de PC: ${this._nombre}, Monitor: ${monitor()}, Raton: ${raton()}, Teclado: ${teclado()}`;
     }
+}
+
+class orden{
+        static idOrden=0;
+    constructor(){
+        this._cantOrden+=orden.idOrden;
+                
+    }
+
+
+
 }
