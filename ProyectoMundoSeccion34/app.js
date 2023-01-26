@@ -60,6 +60,9 @@ class raton{
     
     }
     
+    
+    
+    
     class monitor{
     static idMonitor=0;
     
@@ -90,3 +93,40 @@ class raton{
     }
     }
 
+class computadora{
+
+    static idComputadora=0;
+
+constructor(nombre){
+
+    this._cantidadComputadoras+=computadora.idComputadora;
+    this._nombre=nombre;
+    this._monitor=computadora();
+    this._raton=raton();
+    this._teclado=teclado();
+    
+}
+
+    get nombre(){
+    return this._nombre;
+    }
+    
+    set nombre(nombre){
+        this._nombre=nombre;
+    }
+    
+    get monitor(){
+    return  this._monitor=monitor();}
+    set monitor(monitor){
+    this._monitor=monitor();}
+    
+    get raton(){
+    return this._raton=raton();}
+    set raton(raton){
+    this._raton=raton();}
+    
+    get teclado(){
+    return this._teclado=teclado();}
+    set teclado(teclado){
+    this._teclado=teclado();}
+}
