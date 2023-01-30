@@ -78,39 +78,42 @@ console.log(t1.toString());
 console.log(t2.toString());
 
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////* */
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-class monitor {
-    static idMonitor = 0;
+class monitor extends DispositivoEntrada {
+    static cantMonitor = 0;
 
-    constructor(marca, tamanio) {
-
-        cantidadMonitor += monitor.idMonitor;
-        this._marca = marca;
-        this._tamanio = tamanio;
+    constructor(tipoEntrada,marca,tamanio) {
+    super(tipoEntrada,marca)
+        this._idMonitor =++monitor.cantMonitor;
+        this._tamanio=tamanio;
     }
 
-
-    get marca() {
-        return this._marca;
+    get idMonitor(){
+        return this._idMonitor;
     }
-    set marca(marca) {
-        this._marca = marca;
+    
+    get tamanio(){
+    return this._tamanio;
     }
-
-    get tamanio() {
-        return this._marca;
+    set tamanio(tamanio){
+    this._tamanio=tamanio;
     }
-    set tamanio(tamanio) {
-        this._tamanio = tamanio;
-    }
-
+    
     toString() {
-        return `marca: ${this._marca}, tamanio de pantalla: ${this._tamanio}`;
+        return `idMonitor: ${this.idMonitor}, marca: ${this._marca}, tamanio de pantalla: ${this._tamanio}`;
     }
 }
+
+
+let m1=new monitor("HDMI", "DELL", 14);
+console.log(m1.toString());
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////**/
+
 
 class computadora {
 
