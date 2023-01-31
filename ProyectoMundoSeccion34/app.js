@@ -82,13 +82,14 @@ console.log(t2.toString());
 
 
 
-class monitor extends DispositivoEntrada {
+class monitor {
     static cantMonitor = 0;
 
-    constructor(tipoEntrada,marca,tamanio) {
-    super(tipoEntrada,marca)
+    constructor(marca,tamanio) {
+  
         this._idMonitor =++monitor.cantMonitor;
         this._tamanio=tamanio;
+        this._marca=marca;
     }
 
     get idMonitor(){
@@ -102,20 +103,27 @@ class monitor extends DispositivoEntrada {
     this._tamanio=tamanio;
     }
     
+    get marca(){
+    return this._marca;
+    }
+    set marca(marca){
+    this._marca=marca;
+    }
+    
     toString() {
         return `idMonitor: ${this.idMonitor}, marca: ${this._marca}, tamanio de pantalla: ${this._tamanio}`;
     }
 }
 
 
-let m1=new monitor("HDMI", "DELL", 14);
+let m1=new monitor( "DELL", 14);
 console.log(m1.toString());
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////**/
 
 
-class computadora {
+class computadora extends orden{
 
     static idComputadora = 0;
 
