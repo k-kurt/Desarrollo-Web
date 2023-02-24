@@ -62,7 +62,7 @@ class teclado extends DispositivoEntrada{
 
     }
 
-        get idRaton(){
+        get idTeclado(){
         return this._idTeclado;}
 
 
